@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handling Multiple Requests</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,600&display=swap" rel="stylesheet">
+    <link href="/CSS/home.css" rel="stylesheet">
+    <style>
+        html,body {
+  height:100%;
+  min-height:100%;
+  max-height:100%;
+}
+p:hover{
+    color: rgb(248, 110, 25);
+    font-weight: bolder;
+
+}
+.li-hov li:hover{
+    color: rgb(248, 110, 25);
+    font-weight: bolder;
+}
+    </style>
+    
+
+</head>
+<body>
+    <div style="display:inline-flex; ">
+    
+    <div style="" class="logo">
+        <h4 style="padding: 10px 2px 10px 10px; width: 40px; font-size:xx-large; float: left;float: left;font-family: 'Poppins';">Network</h4>
+        <img style=" padding: 25px 0px 10px 95px; width: 80px;  " src="/assets/nt.png">
+        
+ 
+    </div>
+    <div style="display:inline;position:absolute;" > 
+    <h1 style="text-align:left; font-size:2.7rem; font-family: 'Poppins'; padding: 50px 0px 0px 0px; font-weight:bolder;"><br>Issues in Handling Requests in a <br>Microservices application...</h1>
+    <p style="font-family: 'Poppins'; font-size: larger;">
+        Microservices are increasingly used in the development world as developers work to create larger, more complex applications
+        that are better developed and managed as a combination of smaller services that work cohesively together for more extensive, application-wide functionality.
+
+        Tools such as Service Fabric are rising to meet the need to think about and build apps using a piece-by-piece methodology that is, frankly, less mind-boggling than considering the whole of the application at once.
+    </p>
+    <h2 style="text-align:left; font-size:2.0rem; font-family: 'Poppins'; padding: 50px 0px 0px 0px; font-weight:bolder;">
+        So what is a Microservices<br> Application?
+    </h2>
+    <div style="display: flex;">
+        <p style="font-family: 'Poppins'; font-size: larger; padding: 0px 60px 0px 0px;">
+            <b>A microservices application is a type of software architecture<br> where an application is composed of many smaller, loosely <br> coupled, and independently deployable services.</b>These ser- <br>vices, also known as microservices, can be written in a variety<br> of programming languages and frameworks, and each service<br> acts as a mini-application on its own.Microservices architecture <br> evolved as a solution to the scalability, independently deployable<br>and innovation challenges with Monolithic architecture. In mono<br>-lithic applications,it can be difficult to understand the complexity<br> and make code changes fast and correctly. For small changes,<br>the whole application needs to be built and deployed. <br><br><b>Most large-scale software companies and websites such as Twitter, Netflix, Amazon are using microservices architecture instead of monolithic architecture.</b>
+        </p>
+        <img style="height: auto; width: 700px; padding:0px 0px 0px 0px; border-radius: 5rem;" src="/assets/micro.png" alt="">
+        
+    </div>
+
+    <div>
+        <h1 style="text-align:left; font-size:2.7rem; font-family: 'Poppins'; padding: 50px 0px 0px 0px; font-weight:bolder;">
+            Advantages of Microservices over <br>Monolithic Architecture
+        </h1>
+
+        <ul class="li-hov" style="justify-content: space-evenly;">
+            <li style="font-family: 'Poppins'; font-size: x-large; padding: 0px 60px 0px 0px;">
+                The demanding service can be deployed on multiple servers to enhance performance.
+            </li>
+            <li style="font-family: 'Poppins'; font-size: x-large; padding: 0px 60px 0px 0px;">
+                Dynamic scaling which means even though the number of requests increasing, we can handle them by redirecting the requests to other servers or secondary servers to give them a quick response.
+            </li>
+            <li style="font-family: 'Poppins'; font-size: x-large; padding: 0px 60px 0px 0px;">
+                Microservices allows us to develop an application which is organic (an application which latterly upgrades by adding more functions or modules) in nature.
+            </li>
+            <li style="font-family: 'Poppins'; font-size: x-large; padding: 0px 60px 0px 0px;">
+                The cost of scaling is comparatively less than the monolithic architecture.
+            </li>
+            <li style="font-family: 'Poppins'; font-size: x-large; padding: 0px 60px 0px 0px;">
+                Microservices are independently manageable services. It can enable more and more services as the need arises. It minimizes the impact on existing service.
+            </li>
+            
+
+
+            
+
+
+        </ul>
+    </div>
+    <div>
+        <h2 style="text-align:left; font-size:2.0rem; font-family: 'Poppins'; padding: 50px 0px 0px 0px; font-weight:bolder;">
+           <u> Arising Issues in<br> a Microservices Application</u>
+        </h2>
+
+        <ul class="li-hov">
+            <li style="text-align:left; font-size:1.3rem; font-family: 'Poppins'; padding: 0px 0px 0px 0px; font-weight:bolder;">
+                Risk of Slow Performance due to more number of Requests.
+            </li>
+            <li style="text-align:left; font-size:1.3rem; font-family: 'Poppins'; padding: 0px 0px 0px 0px; font-weight:bolder;" >
+                Issues With Consistency
+            </li>
+            <li style="text-align:left; font-size:1.3rem; font-family: 'Poppins'; padding: 0px 0px 0px 0px; font-weight:bolder;">
+                Higher Maintenance Costs
+            </li>
+            <li style="text-align:left; font-size:1.3rem; font-family: 'Poppins'; padding: 0px 0px 0px 0px; font-weight:bolder;">
+                Preparing a Failure Strategy
+            </li>
+            <li style="text-align:left; font-size:1.3rem; font-family: 'Poppins'; padding: 0px 0px 0px 0px; font-weight:bolder;">
+                Scalability
+            </li>
+        </ul>
+    </div>
+
+<div>
+    <div>
+        <h2 style="text-align:left; font-size:2.0rem; font-family: 'Poppins'; padding: 10px 0px 0px 0px; font-weight:bolder;">
+           1. Risk of Slow Performance due to
+            <br> more number of Requests
+        </h2>
+        <p style="font-family: 'Poppins'; font-size: larger; padding: 0px 60px 0px 0px;">
+            Since each microservice consumes resources, the burden on servers is greater than with monolithic applications. This increase in resource usage may cause the application to run slower. In order to fix it, you need to deploy additional servers.
+        </p>
+            
+
+    </div>
+
+    <div>
+        <h2 style="text-align:left; font-size:2.0rem; font-family: 'Poppins'; padding: 10px 0px 0px 0px; font-weight:bolder;">
+        2. Issues With Consistency
+            
+        </h2>
+        <p style="font-family: 'Poppins'; font-size: larger; padding: 0px 60px 0px 0px;">
+            As microservices need multiple resources to update, developers need to make sure the components are synchronized to avoid unexpected bugs. There is also a need for greater communication between developers and other team members.
+        </p>
+            
+
+    </div>
+
+    <div>
+        <h2 style="text-align:left; font-size:2.0rem; font-family: 'Poppins'; padding: 0px 0px 0px 0px; font-weight:bolder;">
+           3. Scalability
+        </h2>
+        <p style="font-family: 'Poppins'; font-size: larger; padding: 0px 60px 0px 0px;">
+            Although the scalability of microservices is often touted as an advantage, successfully scaling your microservice-based applications is challenging.
+        </p>
+            
+
+    </div>
+    <div>
+        <h2 style="text-align:left; font-size:2.0rem; font-family: 'Poppins'; padding: 0px 0px 0px 0px; font-weight:bolder;">
+           4. Higher Maintenance Costs
+        </h2>
+        <p style="font-family: 'Poppins'; font-size: larger; padding: 0px 60px 0px 0px;">
+            The cost of maintaining separate environments may turn out to be higher than the cost of managing monolith applications.
+        </p>
+            
+
+    </div>
+
+    <div>
+        <h2 style="text-align:left; font-size:2.0rem; font-family: 'Poppins'; padding: 0px 0px 0px 0px; font-weight:bolder;">
+           5. Preparing a Failure Strategy
+        </h2>
+        <p style="font-family: 'Poppins'; font-size: larger; padding: 0px 60px 0px 0px;">
+            In order to avoid a crash of the entire system, team members need to be prepared for failures and respond with a good strategy that would keep the services running despite the breakdown.
+        </p>
+            
+
+    </div>
+
+    
+
+</div>
+
+<div>
+    <h1 style="text-align:left; font-size:2.0rem; font-family: 'Poppins'; padding: 0px 0px 0px 0px; font-weight:bolder;">
+       <u> A solution to handle <br> these issues </u>
+    </h1>
+    <p style="font-family: 'Poppins'; font-size: larger; padding: 0px 60px 0px 0px;">
+        There is a lot of solutions available to handle to these issues but the most probable method is <b>load balancing</b>.So, first of all we need to know what is load balancing.
+    </p>
+    <h3 style="text-align:left; font-size:2.0rem; font-family: 'Poppins'; padding: 0px 0px 0px 0px; font-weight:bolder;">
+        What is load balancing ?
+    </h3>
+    <p  style="font-family: 'Poppins'; font-size: x-large; padding: 0px 60px 0px 0px;">
+        Load balancing refers to efficiently distributing incoming network traffic across a group of <b>backend servers</b>, also known as a <b>server farm or server pool</b>.
+    </p>
+    <img style="width: 400px; height: auto; padding: 30px 0px 0px 0px;" src="https://altosec.com/img/lb-en.gif">
+    <div>
+        <h1  style="text-align:left; font-size:2.0rem; font-family: 'Poppins'; padding: 0px 0px 0px 0px; font-weight:bolder;">
+             The task of laod balancer here:-
+        </h1>
+        <p style="font-family: 'Poppins'; font-size: x-large; padding: 0px 60px 0px 0px;">
+        In the microservices architecture, we have implemented so many servers or mini-servers to handle multiple requests. But the problem is that the request sent by the client don't know which to server to redirect the request so here the load balancer came to manage these kind of issues based on various algoithms.
+        </p>
+       <div >
+       <div style="float: left;">
+        <img  style="height: auto; width: 700px; padding:0px 0px 0px 0px; border-radius: 5rem;" src="/assets/loadb.png" alt="">
+       </div> 
+       <div style="float: left; padding: 30px 20px 20px 30px;" >
+        <h1  style="text-align:left; font-size:2.0rem; font-family: 'Poppins'; padding: 0px 0px 0px 0px; font-weight:bolder;">
+            Types of Load Balancer:
+        </h1>
+        <ul class="li-hov">
+            <li style="font-family: 'Poppins'; font-size: x-large; padding: 0px 60px 0px 0px;">
+                Hardware Load balancer
+            </li>
+            <li style="font-family: 'Poppins'; font-size: x-large; padding: 0px 60px 0px 0px;">
+                Software Load Balancer
+            </li>
+            <li style="font-family: 'Poppins'; font-size: x-large; padding: 0px 60px 0px 0px;">
+                Cloud Load Balancer
+            </li>
+        </ul>
+    </div>
+       
+       </div>
+
+    </div>
+</div>
+<div>
+    <div style="position: absolute; display: grid; padding:300px 100px 20px 20px">
+    <h1 style=" font-size:2.0rem; font-weight:bolder; font-family: 'Poppins'; position: absolute; display: grid; padding:300px 100px 20px 20px">
+       <br><br> Hardware Load Balancer:
+    </h1>
+    <p style=" font-size:1.3rem;  font-family: 'Poppins';  display: grid; padding:150px 100px 20px 20px"> 
+       A hardware load balancer, also known as a hardware load balancing device (HLD), is a proprietary appliance built on custom ASICs to distribute traffic across multiple application servers on the network. It’s a physical appliance used to distribute web traffic across multiple network servers
+    </p>
+    <div>
+        <h1 style="text-align:left; font-size:2.0rem; font-family: 'Poppins'; padding: 0px 0px 0px 0px; font-weight:bolder;"> 
+            Types of Hardware Load Balancer:
+
+        </h1>
+        <p style="font-family: 'Poppins'; font-size: x-large; padding: 0px 60px 0px 0px;">
+            There are four main types of hardware load balancers.
+        </p>
+        <ul class="li-hov">
+            <li style="font-family: 'Poppins'; font-size: x-large; padding: 0px 60px 10px 0px;">
+                <b>Layer 4</b> Load balancer it direct traffic based on layer 4 information such as <b>IP address and source port number</b>. This type of load balancer is the fastest and most efficient but lacks the sophisticated features of other types.
+            </li>
+            <li style="font-family: 'Poppins'; font-size: x-large; padding: 0px 60px 10px 0px;">
+            <b>Layer 7</b> hardware load balancers direct traffic based on layer 7 information such as <b> HTTP headers or URLs</b>. This type of load balancer is more feature-rich than layer 4, allowing for advanced routing decisions to be made and providing deeper insight into user activity.
+            Layer 7 load balancing proxies can read requests and responses in their entirety, rather than manage traffic on a ,<b> packet-by-packet basis like Layer 4 load balancers</b> that can use <b> NAT</b>.
+            </li>
+            <li style="font-family: 'Poppins'; font-size: x-large; padding: 0px 60px 10px 0px;">
+               <b> Global Server Load Balancing (GSLB)</b> is a specialized type of load balancer designed for distributing traffic across multiple data centers. It allows organizations to ensure <b>geographic redundancy, high availability, and improved performance</b>.
+            </li>
+            <li style="font-family: 'Poppins'; font-size: x-large; padding: 0px 60px 10px 0px;">
+                <b>Application Delivery Controllers (ADCs)</b> are powerful hardware devices that provide advanced features such as<b>caching, compression, and SSL offloading</b> . An ADC is the most feature-rich type of load balancer available and provides a comprehensive solution for any organization looking to optimize its application performance.
+        </ul>
+    </div>
+    <div>
+        <h1 style="text-align:left; font-size:2.0rem; font-family: 'Poppins'; padding: 0px 0px 0px 0px; font-weight:bolder;">
+            Difficulties of Hardware Load Balancer:
+        </h1>
+        <ul class="li-hov">
+            <li style="font-family: 'Poppins'; font-size: x-large; padding: 0px 60px 10px 0px;">
+                <b>Increased Complexity:</b> One of the biggest disadvantages of using a hardware load balancer is that it can add complexity to an environment. This is because there are usually multiple devices that need to be configured and managed.
+            </li>
+            <li style="font-family: 'Poppins'; font-size: x-large; padding: 0px 60px 10px 0px;">
+                <b>Increased Costs:</b> Another disadvantage of using a hardware load balancer is that it can be expensive. This is because the devices are usually more expensive than software load balancers.
+            </li>
+            <li style="font-family: 'Poppins'; font-size: x-large; padding: 0px 60px 10px 0px;">
+            <b>Reduced Flexibility:</b> A final disadvantage of using a hardware load balancer is that it can reduce flexibility. This is because it can be difficult to change the configuration of the load balancer without making changes to the underlying infrastructure.
+            </li>
+        </ul>
+
+    </div>
+    
+</div>
+
+</div>
+<div  style="position: absolute; display: grid;padding: 1800px 0px 0px 0px;">
+    <h1  style="text-align:left; font-size:2.0rem; font-family: 'Poppins'; padding: 0px 0px 0px 0px; font-weight:bolder;">Software Load Balancer:</h1>
+    <p style="font-family: 'Poppins'; font-size: x-large; padding: 0px 0px 0px 0px;" >
+        Software load balancing is how administrators route network traffic to different servers. Load balancers evaluate client requests by examining application-level characteristics (the IP address, the HTTP header, and the contents of the request). The load balancer then looks at the servers and determines which server to send the request to.
+    </p>
+   <div>
+    <img style="float: left;" src="/assets/l7.png" alt="">
+    <div style="float: left; padding:10px 20px 30px 30px">
+        <h1>
+            Examples of Software Load Balancer:
+
+        </h1>
+        <ul class="li-hov">
+            <li  style="font-family: 'Poppins'; font-size: x-large; padding: 0px 0px 0px 0px;">
+                HAProxy – A TCP load balancer.
+
+            </li>
+            <li  style="font-family: 'Poppins'; font-size: x-large; padding: 0px 0px 0px 0px;">
+                HNGINX – A http load balancer with SSL termination support.
+            </li>
+            <li  style="font-family: 'Poppins'; font-size: x-large; padding: 0px 0px 0px 0px;">
+                LVS – Linux virtual server offering layer 4 load balancing.
+
+            </li>
+            <li  style="font-family: 'Poppins'; font-size: x-large; padding: 0px 0px 0px 0px;"> 
+                mod_athena – Apache based http load balancer.
+            </li>
+        </ul>
+    </div>
+   </div>
+   <div> 
+    <h1 style="text-align:left; font-size:2.0rem; font-family: 'Poppins'; padding: 0px 0px 0px 0px; font-weight:bolder;">
+        Cloud based load balancer:
+    </h1>
+    <p style="font-family: 'Poppins'; font-size: x-large; padding: 0px 0px 0px 0px;" >
+        Cloud load balancing is defined as the method of splitting workloads and computing properties in a cloud computing.It simply means implementing the concepts of hardware and software load balancing in cloud computing.
+        <br><br>
+    </p>
+       
+
+        <div>
+            <h1 style="text-align:left; font-size:2.0rem; font-family: 'Poppins'; padding: 0px 0px 0px 0px; font-weight:bolder;"><b> Few Examples of cloud load balancers are follows:</b></h1>
+            <ul style="float: left;">
+                <li style="font-family: 'Poppins'; font-size: x-large; padding: 0px 0px 0px 0px;">
+                    <a href="https://cloud.google.com/load-balancing/docs/load-balancing-overview" target="_blank"> Google Cloud Load Balancing</a>
+    
+                </li>
+                <li style="font-family: 'Poppins'; font-size: x-large; padding: 0px 0px 0px 0px;">
+                    <a href="https://azure.microsoft.com/en-in/products/load-balancer/?ef_id=_k_e23ee87d296e121062198c832b875064_k_&OCID=AIDcmmf1elj9v5_SEM__k_e23ee87d296e121062198c832b875064_k_&msclkid=e23ee87d296e121062198c832b875064" target="_blank">
+                    Azure cloud load balancing
+                    </a>
+                </li>
+                <li style="font-family: 'Poppins'; font-size: x-large; padding: 0px 0px 0px 0px;">
+                    <a href="https://aws.amazon.com/elasticloadbalancing/" target="_blank"> AWS Cloud Load Balancing</a>
+                </li>
+            </ul>
+            <img style="float: right; padding-right: 100px; width: 800px; height: auto;" src="/assets/cloud.png" alt="">
+        </div>
+
+
+
+</div>
+   
+<div>
+   <h1 style="text-align:left; font-size:2.0rem; font-family: 'Poppins'; padding: 0px 0px 0px 0px; font-weight:bolder;">
+    Algorithms used in load balancing <br> and their  <b>Java implementation</b>
+   </h1>
+   <p style="font-family: 'Poppins'; font-size: x-large; padding: 0px 0px 0px 0px;"> 
+    <pre style="font-family: 'Poppins'; font-size: x-large; padding: 0px 0px 0px 0px;">
+        public class IpMap   {   
+            // The list of Ips to be routed, Key for Ip, Value for the weight of the Ip 
+            public static HashMap<String, Integer> serverWeightMap =    
+                    new HashMap<String, Integer>();   
+        
+            static   
+            {   
+                serverWeightMap.put("192.168.1.100", 1);   
+                serverWeightMap.put("192.168.1.101", 1);   
+                // Weight 4 
+                serverWeightMap.put("192.168.1.102", 4);   
+                serverWeightMap.put("192.168.1.103", 1);   
+                serverWeightMap.put("192.168.1.104", 1);   
+                // Weight 3 
+                serverWeightMap.put("192.168.1.105", 3);   
+                serverWeightMap.put("192.168.1.106", 1);   
+                // Weight 2 
+                serverWeightMap.put("192.168.1.107", 2);   
+                serverWeightMap.put("192.168.1.108", 1);   
+                serverWeightMap.put("192.168.1.109", 1);   
+                serverWeightMap.put("192.168.1.110", 1);   
+            }   
+        }
+    </pre>
+   </p>
+   <ol>
+    <li style="font-family: 'Poppins'; font-size: x-large; padding: 0px 0px 0px 0px;">
+    <h1 style="font-family: 'Poppins'; font-size: x-large; padding: 0px 0px 0px 0px;">Round Robbin</h1>
+    <p>
+   <pre style="font-family: 'Poppins'; font-size: x-large; padding: 0px 0px 0px 0px;">
+    public class RoundRobin   {   
+        private static Integer pos = 0;   
+    
+        public static String getServer()   
+        {   
+            // Reconstruct a Map to avoid concurrency problems caused by the server's upload and download. 
+            Map<String, Integer> serverMap =    
+                    new HashMap<String, Integer>();   
+            serverMap.putAll(IpMap.serverWeightMap);   
+    
+            // Get the Ip address List 
+            Set<String> keySet = serverMap.keySet();   
+            ArrayList<String> keyList = new ArrayList<String>();   
+            keyList.addAll(keySet);   
+    
+            String server = null;   
+            synchronized (pos)   
+            {   
+                if (pos > keySet.size())   
+                    pos = 0;   
+                server = keyList.get(pos);   
+                pos ++;   
+            }   
+    
+            return server;   
+        }   
+    }
+    </p>
+   </pre>
+    </li>
+    <li style="font-family: 'Poppins'; font-size: x-large; padding: 0px 0px 0px 0px;">
+        <h1 style="font-family: 'Poppins'; font-size: x-large; padding: 0px 0px 0px 0px;">Random</h1>
+        <p>
+            <pre style="font-family: 'Poppins'; font-size: x-large; padding: 0px 0px 0px 0px;">
+                public class Random   {   
+                    public static String getServer()   
+                    {   
+                        // Reconstruct a Map to avoid concurrency problems caused by the server's upload and download. 
+                        Map<String, Integer> serverMap =    
+                                new HashMap<String, Integer>();   
+                        serverMap.putAll(IpMap.serverWeightMap);   
+                
+                        // Get the Ip address List 
+                        Set<String> keySet = serverMap.keySet();   
+                        ArrayList<String> keyList = new ArrayList<String>();   
+                        keyList.addAll(keySet);   
+                
+                        java.util.Random random = new java.util.Random();   
+                        int randomPos = random.nextInt(keyList.size());   
+                
+                        return keyList.get(randomPos);   
+                    }   
+                }
+            </pre>
+        </p>
+
+    </li>
+
+    <li style="font-family: 'Poppins'; font-size: x-large; padding: 0px 0px 0px 0px;">
+        <h1 style="font-family: 'Poppins'; font-size: x-large; padding: 0px 0px 0px 0px;">
+            Hash Method
+        </h1>
+        <p>
+            <pre style="font-family: 'Poppins'; font-size: x-large; padding: 0px 0px 0px 0px;">
+                public class Hash      {      
+                    public static String getServer()      
+                    {      
+                        // Reconstruct a Map to avoid concurrency problems caused by the server's upload and download.
+                        Map<String, Integer> serverMap =       
+                                new HashMap<String, Integer>();      
+                        serverMap.putAll(IpMap.serverWeightMap);      
+                
+                        // Get the Ip address List
+                        Set<String> keySet = serverMap.keySet();      
+                        ArrayList<String> keyList = new ArrayList<String>();      
+                        keyList.addAll(keySet);      
+                
+                        // In Web applications, it can be obtained by the getRemoteIp method of HttpServlet.
+                        String remoteIp = "127.0.0.1";      
+                        int hashCode = remoteIp.hashCode();      
+                        int serverListSize = keyList.size();      
+                        int serverPos = hashCode % serverListSize;      
+                
+                        return keyList.get(serverPos);      
+                    }      
+                }
+            </pre>
+
+            There are so many other algorithms available which are less connections, less time etc..
+            <br>
+            <br>
+            <br>
+          <a href="https://programmer.group/several-simple-load-balancing-algorithms-and-their-java-code-implementation.html" target="_blank"> <p style="color:blue; text-align: center;">" Original code implementation belongs to programmer.group"</p></a> 
+          <a href=""></a>
+
+
+        </p>
+
+
+    </li>
+
+   </ol>
+</div>
+</div>
+
+
+
+</div>
+
+</div>
+    
+
+</body>
+</html>
